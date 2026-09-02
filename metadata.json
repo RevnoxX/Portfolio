@@ -1,0 +1,8 @@
+{
+  "name": "Academic Portfolio",
+  "description": "A B.Tech 2nd-Year student portfolio showcasing AI, Embedded Systems, and Custom Software projects.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
