@@ -19,6 +19,17 @@ export const portfolioData = {
 
   projects: [
     {
+      title: "Custom Minecraft Server & Plugin Architecture",
+      objective: "To develop custom game mechanics and server-side features for a highly customized Minecraft multiplayer experience.",
+      technology: "Java, Purpur API, Paper API",
+      contribution: "Lead plugin developer; architected the server-side logic and event systems.",
+      features: "Custom game mechanics, dynamic event systems, anti-Xray mechanics, custom PvP rules.",
+      outcome: "Delivered a performant, custom-tailored multiplayer server with unique gameplay features.",
+      learning: "Deepened understanding of Java server-side development, event-driven programming, and API integration.",
+      evidence: "Plugin Source Code, Server Demo Video",
+      image: "/assets/minecraftlogo.png"
+    },
+    {
       title: "Discord Bot Application System",
       objective: "To create an automated beta tester application system connecting a web frontend to a Discord server.",
       technology: "Node.js, Discord.js, MongoDB, Netlify, HTML/CSS/JS",
@@ -27,16 +38,6 @@ export const portfolioData = {
       outcome: "Streamlined the beta testing onboarding process with zero manual data entry.",
       learning: "Gained experience in full-stack integration, MongoDB data management, and Discord API interactions.",
       evidence: "GitHub Repository, System Architecture Flowchart"
-    },
-    {
-      title: "Custom Minecraft Server & Plugin Architecture",
-      objective: "To develop custom game mechanics and server-side features for a highly customized Minecraft multiplayer experience.",
-      technology: "Java, Purpur API, Paper API",
-      contribution: "Lead plugin developer; architected the server-side logic and event systems.",
-      features: "Custom game mechanics, dynamic event systems, anti-Xray mechanics, custom PvP rules.",
-      outcome: "Delivered a performant, custom-tailored multiplayer server with unique gameplay features.",
-      learning: "Deepened understanding of Java server-side development, event-driven programming, and API integration.",
-      evidence: "Plugin Source Code, Server Demo Video"
     },
     {
       title: "Embedded Command Deck",
