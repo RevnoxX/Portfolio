@@ -9,6 +9,7 @@ import RoadmapReflection from "./components/RoadmapReflection";
 import Loader from "./components/Loader";
 import Contact from "./components/Contact";
 import NavBar from "./components/NavBar";
+import ScrambleText from "./components/ScrambleText";
 import { portfolioData } from "./data";
 import { useDynamicTitle } from "./hooks/useDynamicTitle";
 
@@ -73,8 +74,10 @@ export default function App() {
                   Hello, I am
                 </div>
                 <h1 className="text-6xl sm:text-8xl md:text-9xl font-black tracking-tighter mb-6 leading-none relative">
-                  {portfolioData.name.split(' ')[0]} <br className="hidden md:block"/> 
-                  <span className="text-gradient">{portfolioData.name.split(' ')[1] || ''}</span>
+                  <ScrambleText text={portfolioData.name.split(' ')[0]} delay={0.2} /> <br className="hidden md:block"/> 
+                  <span className="text-gradient">
+                    <ScrambleText text={portfolioData.name.split(' ')[1] || ''} delay={0.5} />
+                  </span>
                 </h1>
                 <p className="text-2xl md:text-3xl text-gray-500 font-light tracking-wide max-w-3xl">
                   {portfolioData.academics}
