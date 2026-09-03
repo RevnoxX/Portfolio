@@ -56,14 +56,22 @@ export default function App() {
         {isLoading && <Loader key="loader" onComplete={() => setIsLoading(false)} />}
       </AnimatePresence>
 
-      {!isLoading && (
-        <motion.div 
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1 }}
-          className="min-h-dvh relative"
-        >
-          {/* Hero Section */}
+      <AnimatePresence mode="wait">
+        {!isLoading && !isExiting && (
+          <motion.div 
+            key="portfolio-content"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1, y: 0, rotate: 0, scale: 1 }}
+            exit={{ 
+              opacity: 0, 
+              y: '100vh', 
+              rotate: 5, 
+              scale: 0.9,
+              transition: { duration: 0.8, ease: "easeIn" }
+            }}
+            className="min-h-dvh relative overflow-hidden"
+          >
+            {/* Hero Section */}
           <header className="min-h-dvh flex flex-col justify-center px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative z-10 pb-20">
             <motion.div 
               initial={{ opacity: 0, y: 50 }}
@@ -149,10 +157,17 @@ export default function App() {
             <p>© {new Date().getFullYear()} {portfolioData.name}</p>
           </footer>
         </motion.div>
-      )}
+        )}
 
-      <AnimatePresence>
-        {isExiting && <ExitModal onClose={() => setIsExiting(false)} />}
+        {!isLoading && isExiting && (
+          <ExitModal 
+            key="exit-modal" 
+            onClose={() => {
+              window.scrollTo(0, 0);
+              setIsExiting(false);
+            }} 
+          />
+        )}
       </AnimatePresence>
     </div>
   );
