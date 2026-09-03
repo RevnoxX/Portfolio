@@ -3,17 +3,25 @@ import { motion } from "motion/react";
 export default function MinecraftAnimation() {
   return (
     <div className="relative w-full h-full min-h-[300px] flex items-center justify-center">
-      <motion.div 
-        animate={{ y: [-10, 10, -10] }}
-        transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-        className="relative z-10 w-64 h-64 flex items-center justify-center"
-      >
-        <img 
-          src="/assets/minecraftlogo.png" 
-          alt="Minecraft Logo" 
-          className="w-full h-full object-contain drop-shadow-2xl"
-        />
-      </motion.div>
+      <div className="relative z-10 w-48 h-48 flex items-center justify-center" style={{ perspective: '1200px' }}>
+        <motion.div 
+          animate={{ rotateY: [0, 360], rotateX: [-15, -25, -15], y: [-10, 10, -10] }}
+          transition={{ 
+            rotateY: { duration: 12, repeat: Infinity, ease: "linear" }, 
+            rotateX: { duration: 4, repeat: Infinity, ease: "easeInOut" },
+            y: { duration: 4, repeat: Infinity, ease: "easeInOut" }
+          }}
+          className="w-full h-full relative flex items-center justify-center"
+          style={{ transformStyle: 'preserve-3d', transformOrigin: 'center center' }}
+        >
+          <img 
+            src="/assets/minecraftlogo.png" 
+            alt="Minecraft Logo" 
+            className="w-full h-full object-contain drop-shadow-2xl"
+            style={{ transform: 'translateZ(20px)' }}
+          />
+        </motion.div>
+      </div>
       
       {/* Subtle floating particles behind */}
       {[...Array(6)].map((_, i) => (
