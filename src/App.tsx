@@ -10,12 +10,14 @@ import Loader from "./components/Loader";
 import Contact from "./components/Contact";
 import NavBar from "./components/NavBar";
 import ScrambleText from "./components/ScrambleText";
+import ExitModal from "./components/ExitModal";
 import { portfolioData } from "./data";
 import { useDynamicTitle } from "./hooks/useDynamicTitle";
 
 export default function App() {
   const [isLoading, setIsLoading] = useState(true);
   const [activeSection, setActiveSection] = useState("home");
+  const [isExiting, setIsExiting] = useState(false);
 
   useDynamicTitle();
 
@@ -137,11 +139,21 @@ export default function App() {
             </div>
           </main>
 
-          <footer className="text-center text-gray-400 text-sm py-24 border-t border-gray-200 mt-32 relative z-10 uppercase tracking-widest font-bold flex flex-col items-center justify-center gap-6">
+          <footer className="text-center text-gray-400 text-sm py-24 border-t border-gray-200 mt-32 relative z-10 uppercase tracking-widest font-bold flex flex-col items-center justify-center gap-8">
+            <button
+              onClick={() => setIsExiting(true)}
+              className="px-8 py-3 border-2 border-gray-300 text-gray-500 font-bold rounded-lg hover:border-[var(--color-primary)] hover:text-[var(--color-primary)] transition-all duration-300 uppercase tracking-widest text-xs"
+            >
+              End Session
+            </button>
             <p>© {new Date().getFullYear()} {portfolioData.name}</p>
           </footer>
         </motion.div>
       )}
+
+      <AnimatePresence>
+        {isExiting && <ExitModal onClose={() => setIsExiting(false)} />}
+      </AnimatePresence>
     </div>
   );
 }
