@@ -1,7 +1,15 @@
 import { motion } from "motion/react";
 import ScrambleText from "./ScrambleText";
+import { useEffect } from "react";
 
 export default function ExitModal({ onClose }: { onClose: () => void }) {
+  useEffect(() => {
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, []);
+
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -55,7 +63,7 @@ export default function ExitModal({ onClose }: { onClose: () => void }) {
             onClick={onClose}
             className="px-8 py-3 bg-[var(--color-primary)] text-white font-bold rounded-lg hover:bg-[#c96c53] transition-colors uppercase tracking-widest text-xs shadow-lg hover:shadow-xl transform hover:-translate-y-1"
           >
-            Return
+            Restart
           </button>
         </motion.div>
       </motion.div>
