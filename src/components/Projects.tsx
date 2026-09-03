@@ -60,8 +60,8 @@ export default function Projects() {
               <ProjectMiniChart projectIndex={activeIndex} />
             </div>
             <div className="w-full h-full flex justify-center items-center mt-8">
-              {activeIndex === 0 && <DiscordAnimation />}
-              {activeIndex === 1 && <MinecraftAnimation />}
+              {activeIndex === 0 && <MinecraftAnimation />}
+              {activeIndex === 1 && <DiscordAnimation />}
               {activeIndex === 2 && <HardwareAnimation />}
               {activeIndex === 3 && <PhoneAnimation />}
             </div>

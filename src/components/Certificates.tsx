@@ -5,24 +5,24 @@ import DroneContainer from './DroneContainer';
 const certificates = [
   {
     id: 1,
-    title: 'Advanced Neural Net Architectures',
-    issuer: 'DeepLearning.AI',
+    title: 'Python Programming Masterclass',
+    issuer: 'Tech Institute',
     date: '2025.04',
-    image: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&q=80&w=400',
+    image: '/assets/python.png',
   },
   {
     id: 2,
-    title: 'Cloud Infrastructure Security',
-    issuer: 'Google Cloud Platform',
+    title: 'C++ Systems Architecture',
+    issuer: 'Advanced Systems Ltd',
     date: '2024.11',
-    image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&q=80&w=400',
+    image: '/assets/c++.png',
   },
   {
     id: 3,
-    title: 'Quantum Computing Fundamentals',
-    issuer: 'MIT xPRO',
+    title: 'Full-Stack Web Development',
+    issuer: 'Dev Bootcamp',
     date: '2026.01',
-    image: 'https://images.unsplash.com/photo-1635070041078-e363dbe005cb?auto=format&fit=crop&q=80&w=400',
+    image: '/assets/fullstack.png',
   }
 ];
 
